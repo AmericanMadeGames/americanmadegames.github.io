@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>American Made Games</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800&family=Lora:ital,wght@0,400;0,500;1,400&display=swap');
+
+:root {
+  --navy: #16233F;
+  --navy-deep: #0E1729;
+  --crimson: #B4342E;
+  --gold: #C9A227;
+  --parchment: #F2E9D8;
+  --grey: #8A93A6;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: 'Lora', serif;
+  background: var(--navy-deep);
+  color: var(--parchment);
+}
+
+/* ---------- HERO ---------- */
+.hero {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  padding: 40px 24px;
+  background: radial-gradient(ellipse at 50% 30%, var(--navy) 0%, var(--navy-deep) 72%);
+  overflow: hidden;
+}
+
+.star-field {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.shield {
+  width: min(46vw, 210px);
+  margin-bottom: 22px;
+  filter: drop-shadow(0 18px 40px rgba(0,0,0,0.45));
+}
+
+.wordmark {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: clamp(1.8rem, 6vw, 3.1rem);
+  letter-spacing: 0.04em;
+  color: var(--parchment);
+  margin: 0;
+  text-transform: uppercase;
+  line-height: 1.05;
+}
+
+.wordmark span {
+  color: var(--gold);
+}
+
+.tagline {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: clamp(1rem, 2.4vw, 1.25rem);
+  color: var(--grey);
+  margin: 18px 0 0;
+  max-width: 480px;
+}
+
+.hero-stripes {
+  display: flex;
+  gap: 8px;
+  margin-top: 30px;
+}
+.hero-stripes span {
+  width: 46px;
+  height: 6px;
+  border-radius: 3px;
+}
+.hero-stripes span:nth-child(odd) { background: var(--crimson); }
+.hero-stripes span:nth-child(even) { background: var(--gold); }
+
+.scroll-cue {
+  margin-top: 46px;
+  color: var(--grey);
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  animation: bob 2.2s ease-in-out infinite;
+}
+.scroll-cue svg { width: 16px; height: 16px; }
+@keyframes bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
+}
+
+/* ---------- SECTIONS ---------- */
+section {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 90px 24px;
+}
+
+.section-label {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 0.78rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: 0 0 10px;
+}
+
+h2 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  color: var(--parchment);
+  margin: 0 0 28px;
+}
+
+.lede {
+  font-size: 1.08rem;
+  line-height: 1.75;
+  color: #D8DCE6;
+  max-width: 620px;
+}
+
+/* ---------- GAME CARD ---------- */
+.game-card {
+  margin-top: 40px;
+  background: var(--navy);
+  border: 1px solid rgba(201,162,39,0.25);
+  border-radius: 14px;
+  padding: 32px;
+  display: flex;
+  gap: 26px;
+  align-items: center;
+}
+
+.game-icon {
+  width: 92px;
+  height: 92px;
+  border-radius: 20px;
+  flex-shrink: 0;
+  box-shadow: 0 10px 26px rgba(0,0,0,0.35);
+}
+
+.game-info h3 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 1.3rem;
+  margin: 0 0 8px;
+  color: var(--parchment);
+}
+
+.game-info p {
+  margin: 0 0 12px;
+  color: #C3C8D6;
+  font-size: 0.96rem;
+  line-height: 1.6;
+}
+
+.badge {
+  display: inline-block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold);
+  border: 1px solid var(--gold);
+  border-radius: 20px;
+  padding: 5px 14px;
+}
+
+@media (max-width: 560px) {
+  .game-card { flex-direction: column; text-align: center; padding: 26px; }
+}
+
+/* ---------- CONTACT ---------- */
+.contact-section {
+  text-align: center;
+  border-top: 1px solid rgba(201,162,39,0.2);
+}
+
+.email-btn {
+  display: inline-block;
+  margin-top: 10px;
+  background: var(--gold);
+  color: var(--navy-deep);
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 14px 30px;
+  border-radius: 8px;
+  letter-spacing: 0.03em;
+  font-size: 0.95rem;
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+  text-align: center;
+  padding: 40px 24px 50px;
+  color: var(--grey);
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <svg class="star-field" viewBox="0 0 400 800" xmlns="http://www.w3.org/2000/svg">
+    <g fill="#F2E9D8">
+      <circle cx="40" cy="80" r="1.4"/><circle cx="120" cy="40" r="1"/><circle cx="200" cy="120" r="1.6"/>
+      <circle cx="300" cy="60" r="1"/><circle cx="360" cy="150" r="1.3"/><circle cx="60" cy="220" r="1"/>
+      <circle cx="180" cy="260" r="1.5"/><circle cx="330" cy="240" r="1"/><circle cx="20" cy="340" r="1.2"/>
+      <circle cx="260" cy="360" r="1"/><circle cx="140" cy="400" r="1.4"/><circle cx="380" cy="420" r="1"/>
+      <circle cx="90" cy="470" r="1.2"/><circle cx="240" cy="500" r="1"/><circle cx="320" cy="540" r="1.4"/>
+      <circle cx="50" cy="580" r="1"/><circle cx="170" cy="610" r="1.3"/><circle cx="290" cy="650" r="1"/>
+    </g>
+  </svg>
+
+  <svg class="shield" viewBox="0 0 440 460" xmlns="http://www.w3.org/2000/svg">
+    <path d="M 220,30 L 340,65 L 340,190 Q 340,300 220,365 Q 100,300 100,190 L 100,65 Z" fill="#16233F"/>
+    <path d="M 220,30 L 340,65 L 340,190 Q 340,300 220,365 Q 100,300 100,190 L 100,65 Z" fill="none" stroke="#C9A227" stroke-width="5"/>
+    <path d="M 220,55 L 318,84 L 318,188 Q 318,282 220,338 Q 122,282 122,188 L 122,84 Z" fill="#F2E9D8"/>
+    <clipPath id="sc"><path d="M 220,55 L 318,84 L 318,188 Q 318,282 220,338 Q 122,282 122,188 L 122,84 Z"/></clipPath>
+    <g clip-path="url(#sc)">
+      <rect x="122" y="230" width="196" height="18" fill="#B4342E"/>
+      <rect x="122" y="266" width="196" height="18" fill="#B4342E"/>
+      <rect x="122" y="302" width="196" height="18" fill="#B4342E"/>
+    </g>
+    <path d="M 220,90 L 225,104 L 240,104 L 228,113 L 233,128 L 220,119 L 207,128 L 212,113 L 200,104 L 215,104 Z" fill="#16233F"/>
+    <path d="M 198,150 L 198,210 L 248,180 Z" fill="#16233F"/>
+  </svg>
+
+  <h1 class="wordmark">American <span>Made</span> Games</h1>
+  <p class="tagline">Small independent studio. Straightforward games. No nonsense.</p>
+
+  <div class="scroll-cue">
+    Scroll
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </div>
+</section>
+
+<section id="games">
+  <p class="section-label">Our Games</p>
+  <h2>What we've made so far</h2>
+  <p class="lede">We build games meant to be picked up and played immediately — no accounts to create, no data collected, no ads interrupting anything. Just a game that does what it says.</p>
+
+  <div class="game-card">
+    <svg class="game-icon" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#1b2540"/>
+          <stop offset="100%" stop-color="#10152a"/>
+        </linearGradient>
+        <radialGradient id="sunGlow" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#FFD166"/>
+          <stop offset="55%" stop-color="#FF9A2E"/>
+          <stop offset="100%" stop-color="#FF7A1A"/>
+        </radialGradient>
+      </defs>
+      <rect width="1024" height="1024" fill="url(#bg)"/>
+      <circle cx="760" cy="250" r="150" fill="url(#sunGlow)"/>
+      <rect x="0" y="760" width="1024" height="264" fill="#0c1022"/>
+      <line x1="512" y1="760" x2="512" y2="1024" stroke="#f2b134" stroke-width="20" stroke-dasharray="65 55"/>
+      <g transform="translate(102,300) scale(4.1)">
+        <path d="M10,96 L10,72 Q10,60 22,60 L54,60 L70,26 Q74,19 82,19 L118,19 Q126,19 130,26 L146,60 L178,60 Q190,60 190,72 L190,96 Q190,103 182,103 L18,103 Q10,103 10,96 Z" fill="#f2b134"/>
+        <path d="M58,57 L73,29 Q76,24 82,24 L118,24 Q124,24 127,29 L142,57 Z" fill="#1b2540"/>
+        <line x1="100" y1="24" x2="100" y2="57" stroke="#f2b134" stroke-width="2.5"/>
+        <circle cx="48" cy="98" r="17" fill="#10152a"/>
+        <circle cx="48" cy="98" r="17" fill="none" stroke="#f2b134" stroke-width="2.2"/>
+        <circle cx="48" cy="98" r="6.5" fill="#7c8299"/>
+        <circle cx="152" cy="98" r="17" fill="#10152a"/>
+        <circle cx="152" cy="98" r="17" fill="none" stroke="#f2b134" stroke-width="2.2"/>
+        <circle cx="152" cy="98" r="6.5" fill="#7c8299"/>
+      </g>
+    </svg>
+    <div class="game-info">
+      <h3>Highway Trivia</h3>
+      <p>720 questions across six categories, built to be read aloud on road trips. No ads, no accounts, no data collected — pick a category and go.</p>
+      <span class="badge">Coming soon — iOS &amp; Android</span>
+    </div>
+  </div>
+</section>
+
+<section class="contact-section">
+  <p class="section-label">Get In Touch</p>
+  <h2>Questions, feedback, or bug reports</h2>
+  <p class="lede" style="margin: 0 auto;">Whether it's about a game, a partnership, or just to say hello — we read everything that comes in.</p>
+  <a class="email-btn" href="mailto:developer@americanmadegames.com">developer@americanmadegames.com</a>
+</section>
+
+<footer>
+  American Made Games — built independently, without a company or team behind it.
+</footer>
+
+</body>
+</html>
