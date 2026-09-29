@@ -190,8 +190,29 @@ h2 {
   padding: 5px 14px;
 }
 
+.store-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.store-btn {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--navy-deep);
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-decoration: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+}
+
 @media (max-width: 560px) {
   .game-card { flex-direction: column; text-align: center; padding: 26px; }
+  .store-row { justify-content: center; }
 }
 
 /* ---------- CONTACT ---------- */
@@ -300,7 +321,10 @@ footer {
     <div class="game-info">
       <h3>Highway Trivia</h3>
       <p>720 questions across six categories, built to be read aloud on road trips. No ads, no accounts, no data collected — pick a category and go.</p>
-      <span class="badge">Coming soon — iOS &amp; Android</span>
+      <div class="store-row">
+        <a class="store-btn" href="https://apps.apple.com/app/highway-trivia/id6814869891" target="_blank" rel="noopener">Download on the App Store</a>
+        <span class="badge">Android coming soon</span>
+      </div>
     </div>
   </div>
 </section>
