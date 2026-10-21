@@ -181,14 +181,13 @@ h2 {
 .badge {
   display: inline-block;
   font-family: 'Poppins', sans-serif;
-  font-size: 0.7rem;
+  font-size: 0.85rem;
   font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  letter-spacing: 0.02em;
   color: var(--gold);
   border: 1px solid var(--gold);
   border-radius: 20px;
-  padding: 5px 14px;
+  padding: 9px 18px; /* + 1px border = same height as .store-btn */
 }
 
 .store-row {
@@ -210,6 +209,44 @@ h2 {
   padding: 10px 18px;
   border-radius: 8px;
 }
+
+button.store-btn {
+  border: none;
+  cursor: pointer;
+}
+
+.store-btn--muted {
+  background: transparent;
+  color: var(--grey);
+  border: 1px solid var(--grey) !important;
+}
+.store-btn--muted:hover { color: var(--parchment); border-color: var(--parchment) !important; }
+
+/* ---------- ANDROID NOTE POPUP ---------- */
+.note-dialog {
+  max-width: 460px;
+  width: calc(100% - 32px);
+  background: var(--navy);
+  color: var(--parchment);
+  border: 1px solid rgba(201,162,39,0.4);
+  border-radius: 14px;
+  padding: 30px 28px 26px;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.55);
+}
+.note-dialog::backdrop { background: rgba(14,23,41,0.75); }
+.note-dialog h3 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 1.25rem;
+  margin: 0 0 14px;
+}
+.note-dialog p:not(.section-label) {
+  color: #C3C8D6;
+  font-size: 0.96rem;
+  line-height: 1.65;
+  margin: 0 0 14px;
+}
+.note-actions { margin: 8px 0 0; text-align: right; }
 
 @media (max-width: 560px) {
   .game-card { flex-direction: column; text-align: center; padding: 26px; }
@@ -324,10 +361,20 @@ footer {
       <p>720 questions across six categories, built to be read aloud on road trips. No ads, no accounts, no data collected — pick a category and go.</p>
       <div class="store-row">
         <a class="store-btn" href="https://apps.apple.com/app/highway-trivia/id6814869891" target="_blank" rel="noopener">Download on the App Store</a>
-        <span class="badge">Android coming soon</span>
+        <button class="store-btn store-btn--muted" type="button" onclick="document.getElementById('android-note').showModal()">Android: not planned</button>
       </div>
     </div>
   </div>
+
+  <dialog id="android-note" class="note-dialog" aria-labelledby="android-note-title">
+    <p class="section-label">Highway Trivia</p>
+    <h3 id="android-note-title">Why there's no Android version</h3>
+    <p>Google now requires every developer to verify their identity with Google before their apps can be distributed to Android devices — even free apps that collect nothing.</p>
+    <p>That requirement goes against what this studio stands for, and we can't reconcile the two. So no Android version is planned. If those rules change in the future, we'll take another look.</p>
+    <div class="note-actions">
+      <button class="store-btn" type="button" onclick="document.getElementById('android-note').close()">Got it</button>
+    </div>
+  </dialog>
 
   <div class="game-card">
     <svg class="game-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
@@ -348,7 +395,7 @@ footer {
       <p>A character sheet for the tabletop roleplaying game Dungeon World, right in your browser. Nothing to download, no ads, no accounts, no data collected — open it and build your character.</p>
       <div class="store-row">
         <a class="store-btn" href="https://torchlight.americanmadegames.com"target="_blank" rel="noopener">Open in Your Browser</a>
-        <span class="badge">Apps coming soon</span>
+        <span class="badge">iOS coming soon</span>
       </div>
     </div>
   </div>
@@ -364,6 +411,13 @@ footer {
 <footer>
   American Made Games — built independently, without a company or team behind it.
 </footer>
+
+<script>
+  // Close the Android note when clicking the dimmed area outside it
+  document.getElementById('android-note').addEventListener('click', function (e) {
+    if (e.target === this) this.close();
+  });
+</script>
 
 </body>
 </html>
