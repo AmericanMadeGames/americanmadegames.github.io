@@ -251,7 +251,88 @@ button.store-btn {
 @media (max-width: 560px) {
   .game-card { flex-direction: column; text-align: center; padding: 26px; }
   .store-row { justify-content: center; }
+  .email-btn { padding: 14px 18px; font-size: 0.85rem; max-width: 100%; overflow-wrap: anywhere; }
+  .news-item { padding: 20px; }
 }
+
+/* ---------- APPS ---------- */
+.apps-section { border-top: 1px solid rgba(201,162,39,0.2); }
+
+.mini-wordmark {
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.mini-wordmark span { color: var(--gold); }
+
+/* ---------- NEWS ---------- */
+.news-section { border-top: 1px solid rgba(201,162,39,0.2); }
+
+.news-feed {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.news-item {
+  background: var(--navy);
+  border: 1px solid rgba(201,162,39,0.18);
+  border-left: 3px solid var(--crimson);
+  border-radius: 10px;
+  padding: 22px 26px;
+}
+
+.news-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.75rem;
+  color: var(--grey);
+  letter-spacing: 0.04em;
+}
+
+.news-tag {
+  color: var(--gold);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.news-item h3 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 1.08rem;
+  margin: 0 0 8px;
+  color: var(--parchment);
+}
+
+.news-item p {
+  margin: 0;
+  color: #C3C8D6;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.news-item a { color: var(--gold); }
+
+.news-more {
+  display: inline-block;
+  text-decoration: none;
+  margin-top: 20px;
+  background: transparent;
+  color: var(--grey);
+  border: 1px solid var(--grey);
+  border-radius: 8px;
+  padding: 10px 18px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+.news-more:hover { color: var(--parchment); border-color: var(--parchment); }
 
 /* ---------- CONTACT ---------- */
 .contact-section {
@@ -375,6 +456,12 @@ footer {
       <button class="store-btn" type="button" onclick="document.getElementById('android-note').close()">Got it</button>
     </div>
   </dialog>
+</section>
+
+<section id="apps" class="apps-section">
+  <p class="section-label">Our Apps</p>
+  <h2 class="mini-wordmark">American <span>Made</span> Apps</h2>
+  <p class="lede">Useful tools built the same way as our games — they open fast, do one job well, and never ask for an account or your data.</p>
 
   <div class="game-card">
     <svg class="game-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
@@ -394,11 +481,18 @@ footer {
       <h3>Torchlight</h3>
       <p>A character sheet for the tabletop roleplaying game Dungeon World, right in your browser. Nothing to download, no ads, no accounts, no data collected — open it and build your character.</p>
       <div class="store-row">
-        <a class="store-btn" href="https://torchlight.americanmadegames.com"target="_blank" rel="noopener">Open in Your Browser</a>
+        <a class="store-btn" href="https://torchlight.americanmadegames.com" target="_blank" rel="noopener">Open in Your Browser</a>
         <span class="badge">iOS coming soon</span>
       </div>
     </div>
   </div>
+</section>
+
+<section id="news" class="news-section">
+  <p class="section-label">News &amp; Updates</p>
+  <h2>What's new at the studio</h2>
+  <div id="news-feed" class="news-feed"></div>
+  <a class="news-more" href="news.html">See all news &rarr;</a>
 </section>
 
 <section class="contact-section">
@@ -412,7 +506,11 @@ footer {
   American Made Games — built independently, without a company or team behind it.
 </footer>
 
+<!-- News posts live in news.js — edit them there -->
+<script src="news.js"></script>
 <script>
+  renderNews('news-feed', 3); // newest 3 on the homepage
+
   // Close the Android note when clicking the dimmed area outside it
   document.getElementById('android-note').addEventListener('click', function (e) {
     if (e.target === this) this.close();

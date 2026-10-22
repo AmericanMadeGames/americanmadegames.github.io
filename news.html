@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>News — American Made Games</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800&family=Lora:ital,wght@0,400;0,500;1,400&display=swap');
+
+:root {
+  --navy: #16233F;
+  --navy-deep: #0E1729;
+  --crimson: #B4342E;
+  --gold: #C9A227;
+  --parchment: #F2E9D8;
+  --grey: #8A93A6;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Lora', serif;
+  background: var(--navy-deep);
+  color: var(--parchment);
+}
+
+/* ---------- TOP BAR ---------- */
+.topbar {
+  background: radial-gradient(ellipse at 50% 0%, var(--navy) 0%, var(--navy-deep) 80%);
+  border-bottom: 1px solid rgba(201,162,39,0.2);
+}
+.topbar-inner {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 22px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+.brand svg { width: 40px; height: 42px; flex-shrink: 0; }
+.brand-name {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: 1.05rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--parchment);
+  line-height: 1.1;
+}
+.brand-name span { color: var(--gold); }
+.home-link {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: var(--grey);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.home-link:hover { color: var(--parchment); }
+
+/* ---------- SECTIONS ---------- */
+section {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 70px 24px 90px;
+}
+
+.section-label {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 0.78rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: 0 0 10px;
+}
+
+h1 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  color: var(--parchment);
+  margin: 0 0 12px;
+}
+
+.lede {
+  font-size: 1.08rem;
+  line-height: 1.75;
+  color: #D8DCE6;
+  max-width: 620px;
+  margin: 0 0 32px;
+}
+
+/* ---------- NEWS ---------- */
+.news-feed {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.news-item {
+  background: var(--navy);
+  border: 1px solid rgba(201,162,39,0.18);
+  border-left: 3px solid var(--crimson);
+  border-radius: 10px;
+  padding: 22px 26px;
+}
+
+.news-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.75rem;
+  color: var(--grey);
+  letter-spacing: 0.04em;
+}
+
+.news-tag {
+  color: var(--gold);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.news-item h3 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 1.08rem;
+  margin: 0 0 8px;
+  color: var(--parchment);
+}
+
+.news-item p {
+  margin: 0;
+  color: #C3C8D6;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.news-item a { color: var(--gold); }
+
+.back-btn {
+  display: inline-block;
+  margin-top: 28px;
+  background: transparent;
+  color: var(--grey);
+  border: 1px solid var(--grey);
+  border-radius: 8px;
+  padding: 10px 18px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-decoration: none;
+}
+.back-btn:hover { color: var(--parchment); border-color: var(--parchment); }
+
+/* ---------- FOOTER ---------- */
+footer {
+  text-align: center;
+  padding: 40px 24px 50px;
+  color: var(--grey);
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+@media (max-width: 560px) {
+  .news-item { padding: 20px; }
+  .brand-name { font-size: 0.9rem; }
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="index.html" aria-label="American Made Games home">
+      <svg viewBox="95 25 250 345" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M 220,30 L 340,65 L 340,190 Q 340,300 220,365 Q 100,300 100,190 L 100,65 Z" fill="#16233F"/>
+        <path d="M 220,30 L 340,65 L 340,190 Q 340,300 220,365 Q 100,300 100,190 L 100,65 Z" fill="none" stroke="#C9A227" stroke-width="8"/>
+        <path d="M 220,55 L 318,84 L 318,188 Q 318,282 220,338 Q 122,282 122,188 L 122,84 Z" fill="#F2E9D8"/>
+        <clipPath id="sc"><path d="M 220,55 L 318,84 L 318,188 Q 318,282 220,338 Q 122,282 122,188 L 122,84 Z"/></clipPath>
+        <g clip-path="url(#sc)">
+          <rect x="122" y="230" width="196" height="18" fill="#B4342E"/>
+          <rect x="122" y="266" width="196" height="18" fill="#B4342E"/>
+          <rect x="122" y="302" width="196" height="18" fill="#B4342E"/>
+        </g>
+        <path d="M 220,90 L 225,104 L 240,104 L 228,113 L 233,128 L 220,119 L 207,128 L 212,113 L 200,104 L 215,104 Z" fill="#16233F"/>
+        <path d="M 198,150 L 198,210 L 248,180 Z" fill="#16233F"/>
+      </svg>
+      <span class="brand-name">American <span>Made</span> Games</span>
+    </a>
+    <a class="home-link" href="index.html">&larr; Home</a>
+  </div>
+</header>
+
+<section>
+  <p class="section-label">News &amp; Updates</p>
+  <h1>All news from the studio</h1>
+  <p class="lede">Releases, updates, and decisions about our games and apps, newest first.</p>
+
+  <div id="news-feed" class="news-feed"></div>
+
+  <a class="back-btn" href="index.html">&larr; Back to the homepage</a>
+</section>
+
+<footer>
+  American Made Games — built independently, without a company or team behind it.
+</footer>
+
+<!-- News posts live in news.js — edit them there -->
+<script src="news.js"></script>
+<script>
+  renderNews('news-feed'); // everything
+</script>
+
+</body>
+</html>
