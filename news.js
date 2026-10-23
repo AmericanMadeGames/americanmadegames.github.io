@@ -13,6 +13,18 @@
    ============================================================ */
 const NEWS = [
   {
+    date: "Oct 23, 2026",
+    tag: "Highway Trivia",
+    title: "Highway Trivia's biggest update yet is almost here",
+    body: "Version 1.3 gives Highway Trivia a cleaner, brighter design that follows your phone's Light and Dark Mode, with categories styled like green highway signs. A little yellow car now drives you into each round and pulls up to your results, answers react with new animations, and your score counts up at the end. It also adds new ways to go back over the questions you missed. The update will be on the App Store shortly."
+  },
+  {
+    date: "Oct 22, 2026",
+    tag: "Gathered",
+    title: "Gathered beta on iOS is coming soon",
+    body: "Gathered is our new free app for church small group leaders, with openers, Bible games, study notes, and prayer requests in one place. No ads, no accounts, no data collected. The iOS beta opens soon through TestFlight. <a href=\"index.html#apps\">Sign up for beta testing</a> to get an invite."
+  },
+  {
     date: "Oct 22, 2026",
     tag: "Studio",
     title: "Games and apps now have their own sections",

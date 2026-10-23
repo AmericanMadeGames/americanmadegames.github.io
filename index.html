@@ -246,7 +246,7 @@ button.store-btn {
   line-height: 1.65;
   margin: 0 0 14px;
 }
-.note-actions { margin: 8px 0 0; text-align: right; }
+.note-actions { margin: 8px 0 0; display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 10px; }
 
 @media (max-width: 560px) {
   .game-card { flex-direction: column; text-align: center; padding: 26px; }
@@ -364,6 +364,9 @@ footer {
   letter-spacing: 0.04em;
   border-top: 1px solid rgba(255,255,255,0.06);
 }
+.footer-nav { display: flex; justify-content: center; gap: 22px; margin-bottom: 14px; }
+.footer-nav a { color: var(--parchment); text-decoration: none; font-weight: 700; }
+.footer-nav a:hover { color: var(--gold); }
 </style>
 </head>
 <body>
@@ -486,6 +489,36 @@ footer {
       </div>
     </div>
   </div>
+
+  <div class="game-card">
+    <svg class="game-icon" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Gathered app icon">
+      <rect width="1024" height="1024" fill="#3A2819"/>
+      <circle cx="512" cy="512" r="356" fill="#443221"/>
+      <g stroke="#D8A748" stroke-width="62" stroke-linecap="round">
+        <line x1="512" y1="256" x2="512" y2="768"/>
+        <line x1="365" y1="397" x2="659" y2="397"/>
+      </g>
+    </svg>
+    <div class="game-info">
+      <h3>Gathered</h3>
+      <p>Openers, games, study notes, and prayer for church small groups, all in one place. Icebreaker questions, Bible games, the week's passage, and prayer requests in one simple app on the leader's phone. Free forever, no ads, works offline, and collects no data.</p>
+      <div class="store-row">
+        <button class="store-btn" type="button" onclick="document.getElementById('beta-note').showModal()">Sign up for beta testing</button>
+        <span class="badge">iOS beta coming soon</span>
+      </div>
+    </div>
+  </div>
+
+  <dialog id="beta-note" class="note-dialog" aria-labelledby="beta-note-title">
+    <p class="section-label">Gathered</p>
+    <h3 id="beta-note-title">Help test Gathered</h3>
+    <p>Gathered's beta on iOS is opening soon through TestFlight, Apple's free app for testing new apps before they reach the App Store.</p>
+    <p>Want in? Send us an email with the address where you'd like your TestFlight invite, and we'll send one as soon as the beta opens. If you like, tell us what kind of group you lead.</p>
+    <div class="note-actions">
+      <button class="store-btn store-btn--muted" type="button" onclick="document.getElementById('beta-note').close()">Not now</button>
+      <a class="store-btn" href="mailto:developer@americanmadegames.com?subject=Gathered%20beta%20tester%20request&body=Hi%21%20I%27d%20like%20to%20help%20test%20the%20Gathered%20beta%20on%20iOS.%0A%0AEmail%20address%20for%20my%20TestFlight%20invite%3A%0AWhat%20kind%20of%20group%20I%20lead%20%28optional%29%3A%0A">Email to request an invite</a>
+    </div>
+  </dialog>
 </section>
 
 <section id="news" class="news-section">
@@ -503,6 +536,7 @@ footer {
 </section>
 
 <footer>
+  <nav class="footer-nav"><a href="news.html">News</a><a href="support.html">Support</a><a href="privacy.html">Privacy</a></nav>
   American Made Games — built independently, without a company or team behind it.
 </footer>
 
@@ -511,9 +545,11 @@ footer {
 <script>
   renderNews('news-feed', 3); // newest 3 on the homepage
 
-  // Close the Android note when clicking the dimmed area outside it
-  document.getElementById('android-note').addEventListener('click', function (e) {
-    if (e.target === this) this.close();
+  // Close popups when clicking the dimmed area outside them
+  document.querySelectorAll('.note-dialog').forEach(function (d) {
+    d.addEventListener('click', function (e) {
+      if (e.target === d) d.close();
+    });
   });
 </script>
 

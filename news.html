@@ -176,6 +176,116 @@ footer {
   border-top: 1px solid rgba(255,255,255,0.06);
 }
 
+
+.footer-nav { display: flex; justify-content: center; gap: 22px; margin-bottom: 14px; }
+.footer-nav a { color: var(--parchment); text-decoration: none; font-weight: 700; }
+.footer-nav a:hover { color: var(--gold); }
+
+/* ---------- DOCUMENT PAGES (privacy, support) ---------- */
+.doc h2 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--parchment);
+  margin: 44px 0 12px;
+}
+.doc h3 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--gold);
+  margin: 26px 0 8px;
+}
+.doc p, .doc li {
+  color: #C3C8D6;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+.doc p { margin: 0 0 14px; }
+.doc ul { margin: 0 0 14px; padding-left: 22px; }
+.doc li { margin-bottom: 6px; }
+.doc a { color: var(--gold); }
+.doc strong { color: var(--parchment); }
+.updated {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.78rem;
+  color: var(--grey);
+  letter-spacing: 0.04em;
+  margin: -18px 0 30px;
+}
+.promise {
+  background: var(--navy);
+  border: 1px solid rgba(201,162,39,0.25);
+  border-left: 3px solid var(--gold);
+  border-radius: 10px;
+  padding: 20px 24px;
+  margin: 0 0 10px;
+}
+.promise p { margin: 0; color: var(--parchment); font-size: 1.05rem; }
+.product {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 46px 0 6px;
+}
+.product svg { width: 44px; height: 44px; border-radius: 10px; flex-shrink: 0; }
+.product h2 { margin: 0; }
+.status {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--gold);
+  border: 1px solid var(--gold);
+  border-radius: 20px;
+  padding: 3px 10px;
+  white-space: nowrap;
+}
+details {
+  background: var(--navy);
+  border: 1px solid rgba(201,162,39,0.18);
+  border-radius: 10px;
+  margin: 10px 0;
+}
+summary {
+  cursor: pointer;
+  padding: 16px 20px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--parchment);
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+summary::-webkit-details-marker { display: none; }
+summary::after { content: '+'; color: var(--gold); font-size: 1.1rem; line-height: 1; }
+details[open] summary::after { content: '\2212'; }
+details .answer { padding: 0 20px 16px; }
+details .answer p:last-child { margin-bottom: 0; }
+.email-btn {
+  display: inline-block;
+  margin: 6px 0 8px;
+  background: var(--gold);
+  color: var(--navy-deep);
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 14px 26px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+.verse { font-style: italic; color: var(--grey) !important; }
+.doc .section-label { color: var(--gold); font-size: 0.78rem; line-height: normal; margin: 0 0 10px; }
+.doc p.updated { color: var(--grey); font-size: 0.78rem; margin: -18px 0 30px; }
+.doc p.lede { color: #D8DCE6; font-size: 1.08rem; }
+.doc a.email-btn { color: var(--navy-deep); }
+.doc a.back-btn { color: var(--grey); }
+.doc a.back-btn:hover { color: var(--parchment); }
+.doc .promise p { color: var(--parchment); font-size: 1.05rem; margin: 0; }
+
 @media (max-width: 560px) {
   .news-item { padding: 20px; }
   .brand-name { font-size: 0.9rem; }
@@ -217,6 +327,7 @@ footer {
 </section>
 
 <footer>
+  <nav class="footer-nav"><a href="news.html">News</a><a href="support.html">Support</a><a href="privacy.html">Privacy</a></nav>
   American Made Games — built independently, without a company or team behind it.
 </footer>
 
