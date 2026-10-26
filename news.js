@@ -13,6 +13,12 @@
    ============================================================ */
 const NEWS = [
   {
+    date: "Oct 26, 2026",
+    tag: "Gathered",
+    title: "The Gathered beta is open",
+    body: "Small group leaders can now try Gathered on iPhone through TestFlight, Apple's free app for testing new apps. <a href=\"https://testflight.apple.com/join/HFZzsk5j\" target=\"_blank\" rel=\"noopener\">Join the beta here</a>. We'd love your feedback as we get ready for the App Store."
+  },
+  {
     date: "Oct 23, 2026",
     tag: "Highway Trivia",
     title: "Highway Trivia's biggest update yet is almost here",

@@ -290,6 +290,48 @@ details .answer p:last-child { margin-bottom: 0; }
   .news-item { padding: 20px; }
   .brand-name { font-size: 0.9rem; }
 }
+
+/* ---------- COPYABLE EMAIL ---------- */
+.copy-email {
+  display: inline-flex;
+  align-items: stretch;
+  max-width: 100%;
+  margin: 10px 0 8px;
+  background: var(--navy);
+  border: 1px solid rgba(201,162,39,0.45);
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: left;
+}
+.copy-email__addr {
+  padding: 12px 16px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--parchment);
+  user-select: all;
+  -webkit-user-select: all;
+  overflow-wrap: normal;
+  min-width: 0;
+  align-self: center;
+}
+.copy-btn {
+  flex-shrink: 0;
+  background: var(--gold);
+  color: var(--navy-deep);
+  border: none;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 0 18px;
+  min-height: 44px;
+  cursor: pointer;
+}
+.copy-btn:hover { background: #d9b23a; }
+@media (max-width: 560px) {
+  .copy-email__addr { font-size: 0.8rem; padding: 12px; }
+  .copy-btn { padding: 0 14px; }
+}
 </style>
 </head>
 <body>
@@ -404,13 +446,14 @@ details .answer p:last-child { margin-bottom: 0; }
   </ul>
 
   <h2>If you email us</h2>
-  <p>If you write to <a href="mailto:developer@americanmadegames.com">developer@americanmadegames.com</a>, we'll see your email address and whatever you include. We use it only to reply to you, and we never add you to a mailing list or share it.</p>
+  <p>If you write to us at <strong>developer@americanmadegames.com</strong>, we'll see your email address and whatever you include. We use it only to reply to you, and we never add you to a mailing list or share it.</p>
 
   <h2>Children</h2>
   <p>Our games and apps can be used by people of all ages. Because we collect no personal information from anyone, we collect none from children either.</p>
 
   <h2>Questions</h2>
-  <p>Email <a href="mailto:developer@americanmadegames.com">developer@americanmadegames.com</a> with any questions about this policy.</p>
+  <p>Email us with any questions about this policy:</p>
+  <div><div class="copy-email"><span class="copy-email__addr">developer@<wbr>americanmadegames.com</span><button type="button" class="copy-btn" data-copy="developer@americanmadegames.com">Copy</button></div></div>
 
   <a class="back-btn" href="index.html">&larr; Back to the homepage</a>
 </section>
@@ -420,6 +463,37 @@ details .answer p:last-child { margin-bottom: 0; }
   <nav class="footer-nav"><a href="news.html">News</a><a href="support.html">Support</a><a href="privacy.html">Privacy</a></nav>
   American Made Games — built independently, without a company or team behind it.
 </footer>
+
+
+<script>
+  // Copy-to-clipboard for email addresses
+  document.querySelectorAll('.copy-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var text = btn.getAttribute('data-copy');
+      function done(ok) {
+        btn.textContent = ok ? 'Copied!' : 'Select & copy';
+        if (!ok) {
+          var addr = btn.parentNode.querySelector('.copy-email__addr');
+          var r = document.createRange(); r.selectNodeContents(addr);
+          var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+        }
+        setTimeout(function () { btn.textContent = 'Copy'; }, 2000);
+      }
+      function fallback() {
+        try {
+          var t = document.createElement('textarea');
+          t.value = text; t.setAttribute('readonly', ''); t.style.position = 'fixed'; t.style.opacity = '0';
+          document.body.appendChild(t); t.select();
+          var ok = document.execCommand('copy');
+          document.body.removeChild(t); done(ok);
+        } catch (e) { done(false); }
+      }
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text).then(function () { done(true); }, fallback);
+      } else { fallback(); }
+    });
+  });
+</script>
 
 </body>
 </html>
