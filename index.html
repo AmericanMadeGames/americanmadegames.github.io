@@ -4,6 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>American Made Games</title>
+<meta name="theme-color" content="#0E1729">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800&family=Lora:ital,wght@0,400;0,500;1,400&display=swap');
 
@@ -248,9 +252,41 @@ button.store-btn {
 }
 .note-actions { margin: 8px 0 0; display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 10px; }
 
+.learn-more {
+  display: inline-block;
+  margin: 0 0 14px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 0.88rem;
+  color: var(--gold);
+  text-decoration: none;
+}
+.learn-more:hover { color: var(--parchment); text-decoration: underline; }
+
 @media (max-width: 560px) {
-  .game-card { flex-direction: column; text-align: center; padding: 26px; }
-  .store-row { justify-content: center; }
+  .game-card { flex-direction: column; text-align: center; padding: 26px 18px; }
+  /* buttons stay side by side on phones: two equal columns */
+  .store-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    width: 100%;
+    align-items: stretch;
+  }
+  .store-row > * { margin: 0; align-self: stretch; }
+  .store-row > :only-child { grid-column: 1 / -1; justify-self: center; align-self: center; }
+  .store-row .store-btn,
+  .store-row .badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 44px;
+    padding: 8px 10px;
+    font-size: 0.78rem;
+    line-height: 1.25;
+    box-sizing: border-box;
+  }
   .email-btn { padding: 14px 18px; font-size: 0.85rem; max-width: 100%; overflow-wrap: anywhere; }
   .news-item { padding: 20px; }
 }
@@ -485,6 +521,7 @@ footer {
     <div class="game-info">
       <h3>Highway Trivia</h3>
       <p>720 questions across six categories, built to be read aloud on road trips. No ads, no accounts, no data collected — pick a category and go.</p>
+      <a class="learn-more" href="https://highwaytrivia.americanmadegames.com" target="_blank" rel="noopener">Learn more about Highway Trivia <span aria-hidden="true">&rarr;</span></a>
       <div class="store-row">
         <a class="store-btn" href="https://apps.apple.com/app/highway-trivia/id6814869891" target="_blank" rel="noopener">Download on the App Store</a>
         <button class="store-btn store-btn--muted" type="button" onclick="document.getElementById('android-note').showModal()">Android: not planned</button>
@@ -506,7 +543,7 @@ footer {
 <section id="apps" class="apps-section">
   <p class="section-label">Our Apps</p>
   <h2 class="mini-wordmark">American <span>Made</span> Apps</h2>
-  <p class="lede">Useful tools built the same way as our games — they open fast, do one job well, and never ask for an account or your data.</p>
+  <p class="lede">Useful tools built the same way as our games — they open fast, do one job well, and never ask for an account. They collect no data unless a feature truly needs it, and when one does, we say exactly what and why.</p>
 
   <div class="game-card">
     <svg class="game-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
@@ -544,9 +581,21 @@ footer {
     <div class="game-info">
       <h3>Gathered</h3>
       <p>Openers, games, study notes, and prayer for church small groups, all in one place. Icebreaker questions, Bible games, the week's passage, and prayer requests in one simple app on the leader's phone. Free forever, no ads, works offline, and collects no data.</p>
+      <a class="learn-more" href="https://gathered.americanmadegames.com" target="_blank" rel="noopener">Learn more about Gathered <span aria-hidden="true">&rarr;</span></a>
       <div class="store-row">
         <a class="store-btn" href="https://testflight.apple.com/join/HFZzsk5j" target="_blank" rel="noopener">Join the iOS Beta</a>
         <span class="badge">App Store coming soon</span>
+      </div>
+    </div>
+  </div>
+  <div class="game-card">
+    <svg class="game-icon" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Be the Critic app icon"><rect width="120" height="120" rx="0" fill="#C8102E"></rect><circle cx="52" cy="64" r="40" fill="#A50D26" opacity=".7"></circle><g transform="translate(4 0) rotate(9 46 78)"><g fill="#FFF6D6" stroke="#E2B86A" stroke-width="1"><circle cx="25" cy="46" r="4"></circle><circle cx="32" cy="43" r="4.5"></circle><circle cx="40" cy="42" r="4.5"></circle><circle cx="48" cy="41" r="5"></circle><circle cx="56" cy="42" r="4.5"></circle><circle cx="64" cy="43" r="4.5"></circle><circle cx="70" cy="47" r="4"></circle><circle cx="29" cy="38" r="4"></circle><circle cx="37" cy="35" r="4.5"></circle><circle cx="45" cy="33" r="4.5"></circle><circle cx="53" cy="34" r="4.5"></circle><circle cx="61" cy="35" r="4.5"></circle><circle cx="67" cy="40" r="4"></circle><circle cx="41" cy="27" r="4"></circle><circle cx="50" cy="26" r="4"></circle><circle cx="58" cy="28" r="4"></circle><circle cx="33" cy="30" r="3.5"></circle><circle cx="64" cy="31" r="3.5"></circle></g><g fill="#FFC24A"><circle cx="36" cy="40" r="1.3"></circle><circle cx="52" cy="30" r="1.3"></circle><circle cx="60" cy="40" r="1.3"></circle><circle cx="44" cy="36" r="1.3"></circle><circle cx="66" cy="45" r="1.3"></circle></g><polygon points="22,50 31.6,50 34.6,102 27,102" fill="#C8102E"></polygon><polygon points="31.6,50 41.2,50 42.2,102 34.6,102" fill="#F3EBDD"></polygon><polygon points="41.2,50 50.8,50 49.8,102 42.2,102" fill="#C8102E"></polygon><polygon points="50.8,50 60.4,50 57.4,102 49.8,102" fill="#F3EBDD"></polygon><polygon points="60.4,50 70,50 65,102 57.4,102" fill="#C8102E"></polygon><polygon points="22,50 70,50 65,102 27,102" fill="none" stroke="#0E0E10" stroke-width="2" stroke-linejoin="round"></polygon><rect x="20" y="46" width="52" height="7" rx="3" fill="#FFC24A" stroke="#0E0E10" stroke-width="1.6"></rect></g><g transform="translate(70 84) rotate(-14) scale(1)"> <rect x="-30" y="-11" width="60" height="22" rx="7" fill="#F3EBDD" stroke="#0E0E10" stroke-width="2"></rect> <rect x="-25" y="-7" width="21" height="14" rx="4" fill="#C8102E"></rect> <rect x="4" y="-7" width="21" height="14" rx="4" fill="#FFC24A"></rect> <path d="M-4.5 11 Q0 1 4.5 11 Z" fill="#0E0E10"></path> <path d="M-21 -3.5 L-15 -3.5" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" opacity=".6"></path> <path d="M8 -3.5 L14 -3.5" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" opacity=".6"></path></g></svg>
+    <div class="game-info">
+      <h3>Be the Critic</h3>
+      <p>Your movie night scorecard. Score every movie you watch on six categories, keep them all as Ticket Stubs, and settle movie night debates with friends, on one phone or in online clubs where everyone rates on their own. Free for iPhone, with no ads and no account.</p>
+      <a class="learn-more" href="https://bethecritic.americanmadegames.com" target="_blank" rel="noopener">Learn more about Be the Critic <span aria-hidden="true">&rarr;</span></a>
+      <div class="store-row">
+        <span class="badge">Coming soon to the App Store</span>
       </div>
     </div>
   </div>

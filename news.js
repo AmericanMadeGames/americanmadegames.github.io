@@ -13,6 +13,12 @@
    ============================================================ */
 const NEWS = [
   {
+    date: "Oct 29, 2026",
+    tag: "Be the Critic",
+    title: "Be the Critic is coming soon",
+    body: "Our next app is a movie night scorecard. Be the Critic lets you score every movie you watch on six categories, keep them all as Ticket Stubs, and settle movie night debates with friends, on one phone or in online clubs where everyone rates on their own. It's free for iPhone and coming soon to the App Store. <a href=\"https://bethecritic.americanmadegames.com\" target=\"_blank\" rel=\"noopener\">Take a look</a>. Online clubs need to store a little data to work, so we've updated our <a href=\"privacy.html\">privacy policy</a> to explain exactly what."
+  },
+  {
     date: "Oct 26, 2026",
     tag: "Gathered",
     title: "The Gathered beta is open",
@@ -21,8 +27,8 @@ const NEWS = [
   {
     date: "Oct 23, 2026",
     tag: "Highway Trivia",
-    title: "Highway Trivia's biggest update yet is almost here",
-    body: "Version 1.3 gives Highway Trivia a cleaner, brighter design that follows your phone's Light and Dark Mode, with categories styled like green highway signs. A little yellow car now drives you into each round and pulls up to your results, answers react with new animations, and your score counts up at the end. It also adds new ways to go back over the questions you missed. The update will be on the App Store shortly."
+    title: "Highway Trivia 1.3 is out now",
+    body: "Highway Trivia's biggest update yet is here. Version 1.3 gives the app a cleaner, brighter design that follows your phone's Light and Dark Mode, with categories styled like green highway signs. A little yellow car now drives you into each round and pulls up to your results, answers react with new animations, and your score counts up at the end. And if you miss one, you can tap to move on as soon as you've seen the right answer. <a href=\"https://apps.apple.com/app/highway-trivia/id6814869891\" target=\"_blank\" rel=\"noopener\">Get it on the App Store</a>."
   },
   {
     date: "Oct 22, 2026",
