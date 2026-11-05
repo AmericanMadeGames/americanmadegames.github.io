@@ -7,9 +7,12 @@
      date:  shown as written, e.g. "Oct 22, 2026"
      tag:   a short label, e.g. "Highway Trivia", "Torchlight", "Studio"
      title: one line
-     body:  a sentence or two (simple HTML like <a href="...">links</a> is fine)
+     body:  a sentence or two (simple HTML like <a href="...">links</a> is fine;
+            it goes onto the page exactly as written)
 
-   The homepage shows the newest 3. The News page shows everything.
+   Any element with class="news-feed" gets filled with posts. Add
+   data-news-limit="3" to show only the newest 3 (the homepage does
+   this); leave it off to show everything (the News page).
    ============================================================ */
 const NEWS = [
   {
@@ -57,17 +60,15 @@ const NEWS = [
 ];
 
 /* ---------- No need to edit below this line ---------- */
-function renderNews(containerId, limit) {
-  const feed = document.getElementById(containerId);
-  if (!feed) return;
-  const items = typeof limit === "number" ? NEWS.slice(0, limit) : NEWS;
-  items.forEach(function (item) {
-    const el = document.createElement("article");
-    el.className = "news-item";
-    el.innerHTML =
-      '<div class="news-meta"><span class="news-tag">' + item.tag + "</span><span>" + item.date + "</span></div>" +
-      "<h3>" + item.title + "</h3>" +
-      "<p>" + item.body + "</p>";
-    feed.appendChild(el);
+document.querySelectorAll('.news-feed').forEach(function (feed) {
+  const limit = Number(feed.dataset.newsLimit) || NEWS.length;
+  NEWS.slice(0, limit).forEach(function (item) {
+    const post = document.createElement('article');
+    post.className = 'news-item';
+    post.innerHTML =
+      '<div class="news-meta"><span class="news-tag">' + item.tag + '</span><span>' + item.date + '</span></div>' +
+      '<h3>' + item.title + '</h3>' +
+      '<p>' + item.body + '</p>';
+    feed.appendChild(post);
   });
-}
+});

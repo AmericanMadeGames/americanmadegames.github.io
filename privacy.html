@@ -8,361 +8,25 @@
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800&family=Lora:ital,wght@0,400;0,500;1,400&display=swap');
-
-:root {
-  --navy: #16233F;
-  --navy-deep: #0E1729;
-  --crimson: #B4342E;
-  --gold: #C9A227;
-  --parchment: #F2E9D8;
-  --grey: #8A93A6;
-}
-
-* { box-sizing: border-box; }
-
-body {
-  margin: 0;
-  font-family: 'Lora', serif;
-  background: var(--navy-deep);
-  color: var(--parchment);
-}
-
-/* ---------- TOP BAR ---------- */
-.topbar {
-  background: radial-gradient(ellipse at 50% 0%, var(--navy) 0%, var(--navy-deep) 80%);
-  border-bottom: 1px solid rgba(201,162,39,0.2);
-}
-.topbar-inner {
-  max-width: 780px;
-  margin: 0 auto;
-  padding: 22px 24px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-}
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  text-decoration: none;
-}
-.brand svg { width: 40px; height: 42px; flex-shrink: 0; }
-.brand-name {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 800;
-  font-size: 1.05rem;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: var(--parchment);
-  line-height: 1.1;
-}
-.brand-name span { color: var(--gold); }
-.home-link {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 700;
-  font-size: 0.8rem;
-  color: var(--grey);
-  text-decoration: none;
-  white-space: nowrap;
-}
-.home-link:hover { color: var(--parchment); }
-
-/* ---------- SECTIONS ---------- */
-section {
-  max-width: 780px;
-  margin: 0 auto;
-  padding: 70px 24px 90px;
-}
-
-.section-label {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 700;
-  font-size: 0.78rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin: 0 0 10px;
-}
-
-h1 {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 700;
-  font-size: clamp(1.6rem, 4vw, 2.2rem);
-  color: var(--parchment);
-  margin: 0 0 12px;
-}
-
-.lede {
-  font-size: 1.08rem;
-  line-height: 1.75;
-  color: #D8DCE6;
-  max-width: 620px;
-  margin: 0 0 32px;
-}
-
-/* ---------- NEWS ---------- */
-.news-feed {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.news-item {
-  background: var(--navy);
-  border: 1px solid rgba(201,162,39,0.18);
-  border-left: 3px solid var(--crimson);
-  border-radius: 10px;
-  padding: 22px 26px;
-}
-
-.news-meta {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 8px;
-  font-family: 'Poppins', sans-serif;
-  font-size: 0.75rem;
-  color: var(--grey);
-  letter-spacing: 0.04em;
-}
-
-.news-tag {
-  color: var(--gold);
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-}
-
-.news-item h3 {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 700;
-  font-size: 1.08rem;
-  margin: 0 0 8px;
-  color: var(--parchment);
-}
-
-.news-item p {
-  margin: 0;
-  color: #C3C8D6;
-  font-size: 0.95rem;
-  line-height: 1.6;
-}
-
-.news-item a { color: var(--gold); }
-
-.back-btn {
-  display: inline-block;
-  margin-top: 28px;
-  background: transparent;
-  color: var(--grey);
-  border: 1px solid var(--grey);
-  border-radius: 8px;
-  padding: 10px 18px;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 700;
-  font-size: 0.85rem;
-  text-decoration: none;
-}
-.back-btn:hover { color: var(--parchment); border-color: var(--parchment); }
-
-/* ---------- FOOTER ---------- */
-footer {
-  text-align: center;
-  padding: 40px 24px 50px;
-  color: var(--grey);
-  font-family: 'Poppins', sans-serif;
-  font-size: 0.78rem;
-  letter-spacing: 0.04em;
-  border-top: 1px solid rgba(255,255,255,0.06);
-}
-
-
-.footer-nav { display: flex; justify-content: center; gap: 22px; margin-bottom: 14px; }
-.footer-nav a { color: var(--parchment); text-decoration: none; font-weight: 700; }
-.footer-nav a:hover { color: var(--gold); }
-
-/* ---------- DOCUMENT PAGES (privacy, support) ---------- */
-.doc h2 {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 700;
-  font-size: 1.25rem;
-  color: var(--parchment);
-  margin: 44px 0 12px;
-}
-.doc h3 {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 700;
-  font-size: 1rem;
-  color: var(--gold);
-  margin: 26px 0 8px;
-}
-.doc p, .doc li {
-  color: #C3C8D6;
-  font-size: 1rem;
-  line-height: 1.7;
-}
-.doc p { margin: 0 0 14px; }
-.doc ul { margin: 0 0 14px; padding-left: 22px; }
-.doc li { margin-bottom: 6px; }
-.doc a { color: var(--gold); }
-.doc strong { color: var(--parchment); }
-.updated {
-  font-family: 'Poppins', sans-serif;
-  font-size: 0.78rem;
-  color: var(--grey);
-  letter-spacing: 0.04em;
-  margin: -18px 0 30px;
-}
-.promise {
-  background: var(--navy);
-  border: 1px solid rgba(201,162,39,0.25);
-  border-left: 3px solid var(--gold);
-  border-radius: 10px;
-  padding: 20px 24px;
-  margin: 0 0 10px;
-}
-.promise p { margin: 0; color: var(--parchment); font-size: 1.05rem; }
-.product {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  margin: 46px 0 6px;
-}
-.product svg { width: 44px; height: 44px; border-radius: 10px; flex-shrink: 0; }
-.product h2 { margin: 0; }
-.status {
-  font-family: 'Poppins', sans-serif;
-  font-size: 0.7rem;
-  font-weight: 700;
-  color: var(--gold);
-  border: 1px solid var(--gold);
-  border-radius: 20px;
-  padding: 3px 10px;
-  white-space: nowrap;
-}
-details {
-  background: var(--navy);
-  border: 1px solid rgba(201,162,39,0.18);
-  border-radius: 10px;
-  margin: 10px 0;
-}
-summary {
-  cursor: pointer;
-  padding: 16px 20px;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 700;
-  font-size: 0.95rem;
-  color: var(--parchment);
-  list-style: none;
-  display: flex;
-  justify-content: space-between;
-  gap: 12px;
-}
-summary::-webkit-details-marker { display: none; }
-summary::after { content: '+'; color: var(--gold); font-size: 1.1rem; line-height: 1; }
-details[open] summary::after { content: '\2212'; }
-details .answer { padding: 0 20px 16px; }
-details .answer p:last-child { margin-bottom: 0; }
-.email-btn {
-  display: inline-block;
-  margin: 6px 0 8px;
-  background: var(--gold);
-  color: var(--navy-deep);
-  font-family: 'Poppins', sans-serif;
-  font-weight: 700;
-  text-decoration: none;
-  padding: 14px 26px;
-  border-radius: 8px;
-  font-size: 0.95rem;
-  max-width: 100%;
-  overflow-wrap: anywhere;
-}
-.verse { font-style: italic; color: var(--grey) !important; }
-.doc .section-label { color: var(--gold); font-size: 0.78rem; line-height: normal; margin: 0 0 10px; }
-.doc p.updated { color: var(--grey); font-size: 0.78rem; margin: -18px 0 30px; }
-.doc p.lede { color: #D8DCE6; font-size: 1.08rem; }
-.doc a.email-btn { color: var(--navy-deep); }
-.doc a.back-btn { color: var(--grey); }
-.doc a.back-btn:hover { color: var(--parchment); }
-.doc .promise p { color: var(--parchment); font-size: 1.05rem; margin: 0; }
-
-@media (max-width: 560px) {
-  .news-item { padding: 20px; }
-  .brand-name { font-size: 0.9rem; }
-}
-
-/* ---------- COPYABLE EMAIL ---------- */
-.copy-email {
-  display: inline-flex;
-  align-items: stretch;
-  max-width: 100%;
-  margin: 10px 0 8px;
-  background: var(--navy);
-  border: 1px solid rgba(201,162,39,0.45);
-  border-radius: 8px;
-  overflow: hidden;
-  text-align: left;
-}
-.copy-email__addr {
-  padding: 12px 16px;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 600;
-  font-size: 0.92rem;
-  color: var(--parchment);
-  user-select: all;
-  -webkit-user-select: all;
-  overflow-wrap: normal;
-  min-width: 0;
-  align-self: center;
-}
-.copy-btn {
-  flex-shrink: 0;
-  background: var(--gold);
-  color: var(--navy-deep);
-  border: none;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 700;
-  font-size: 0.85rem;
-  padding: 0 18px;
-  min-height: 44px;
-  cursor: pointer;
-}
-.copy-btn:hover { background: #d9b23a; }
-@media (max-width: 560px) {
-  .copy-email__addr { font-size: 0.8rem; padding: 12px; }
-  .copy-btn { padding: 0 14px; }
-}
-</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800&family=Lora:ital,wght@0,400;0,500;1,400&display=swap">
+<link rel="stylesheet" href="site.css">
 </head>
 <body>
 
 <header class="topbar">
   <div class="topbar-inner">
     <a class="brand" href="index.html" aria-label="American Made Games home">
-      <svg viewBox="95 25 250 345" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <path d="M 220,30 L 340,65 L 340,190 Q 340,300 220,365 Q 100,300 100,190 L 100,65 Z" fill="#16233F"/>
-        <path d="M 220,30 L 340,65 L 340,190 Q 340,300 220,365 Q 100,300 100,190 L 100,65 Z" fill="none" stroke="#C9A227" stroke-width="8"/>
-        <path d="M 220,55 L 318,84 L 318,188 Q 318,282 220,338 Q 122,282 122,188 L 122,84 Z" fill="#F2E9D8"/>
-        <clipPath id="sc"><path d="M 220,55 L 318,84 L 318,188 Q 318,282 220,338 Q 122,282 122,188 L 122,84 Z"/></clipPath>
-        <g clip-path="url(#sc)">
-          <rect x="122" y="230" width="196" height="18" fill="#B4342E"/>
-          <rect x="122" y="266" width="196" height="18" fill="#B4342E"/>
-          <rect x="122" y="302" width="196" height="18" fill="#B4342E"/>
-        </g>
-        <path d="M 220,90 L 225,104 L 240,104 L 228,113 L 233,128 L 220,119 L 207,128 L 212,113 L 200,104 L 215,104 Z" fill="#16233F"/>
-        <path d="M 198,150 L 198,210 L 248,180 Z" fill="#16233F"/>
-      </svg>
+      <img src="icons/shield-small.svg" alt="" width="40" height="42">
       <span class="brand-name">American <span>Made</span> Games</span>
     </a>
     <a class="home-link" href="index.html">&larr; Home</a>
   </div>
 </header>
 
-<section class="doc">
+<main>
+<section class="page doc">
   <p class="section-label">Privacy Policy</p>
   <h1>We collect only what's needed</h1>
   <p class="updated">Last updated October 29, 2026</p>
@@ -378,52 +42,13 @@ details .answer p:last-child { margin-bottom: 0; }
   </ul>
   <p>If something here ever changes, we'll update this page and post about it in our <a href="news.html">news</a> first.</p>
 
-  <div class="product"><svg aria-hidden="true" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#1b2540"/>
-          <stop offset="100%" stop-color="#10152a"/>
-        </linearGradient>
-        <radialGradient id="sunGlow" cx="50%" cy="50%" r="50%">
-          <stop offset="0%" stop-color="#FFD166"/>
-          <stop offset="55%" stop-color="#FF9A2E"/>
-          <stop offset="100%" stop-color="#FF7A1A"/>
-        </radialGradient>
-      </defs>
-      <rect width="1024" height="1024" fill="url(#bg)"/>
-      <circle cx="760" cy="250" r="150" fill="url(#sunGlow)"/>
-      <rect x="0" y="760" width="1024" height="264" fill="#0c1022"/>
-      <line x1="512" y1="760" x2="512" y2="1024" stroke="#f2b134" stroke-width="20" stroke-dasharray="65 55"/>
-      <g transform="translate(102,300) scale(4.1)">
-        <path d="M10,96 L10,72 Q10,60 22,60 L54,60 L70,26 Q74,19 82,19 L118,19 Q126,19 130,26 L146,60 L178,60 Q190,60 190,72 L190,96 Q190,103 182,103 L18,103 Q10,103 10,96 Z" fill="#f2b134"/>
-        <path d="M58,57 L73,29 Q76,24 82,24 L118,24 Q124,24 127,29 L142,57 Z" fill="#1b2540"/>
-        <line x1="100" y1="24" x2="100" y2="57" stroke="#f2b134" stroke-width="2.5"/>
-        <circle cx="48" cy="98" r="17" fill="#10152a"/>
-        <circle cx="48" cy="98" r="17" fill="none" stroke="#f2b134" stroke-width="2.2"/>
-        <circle cx="48" cy="98" r="6.5" fill="#7c8299"/>
-        <circle cx="152" cy="98" r="17" fill="#10152a"/>
-        <circle cx="152" cy="98" r="17" fill="none" stroke="#f2b134" stroke-width="2.2"/>
-        <circle cx="152" cy="98" r="6.5" fill="#7c8299"/>
-      </g>
-    </svg><h2>Highway Trivia</h2></div>
+  <div class="product"><img src="icons/highway-trivia.svg" alt="" width="44" height="44"><h2>Highway Trivia</h2></div>
   <ul>
     <li>No accounts, no ads, no analytics, and no data collected.</li>
     <li>Nothing you do in the app is sent to us or anyone else.</li>
   </ul>
 
-  <div class="product"><svg aria-hidden="true" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-      <rect width="100" height="100" fill="#12262c"/>
-      <circle cx="50" cy="40" r="30" fill="#f59e0b" fill-opacity="0.13"/>
-      <circle cx="50" cy="40" r="20" fill="#f59e0b" fill-opacity="0.12"/>
-      <path d="M50 13 C61 27 69 38 63 51 C59 59 41 59 37 51 C31 38 40 29 50 13 Z" fill="#f59e0b"/>
-      <path d="M50 27 C56 36 59 44 55 50 C52 54 48 54 45 50 C41 44 45 36 50 27 Z" fill="#fde68a"/>
-      <circle cx="62" cy="22" r="1.6" fill="#fbbf24"/>
-      <circle cx="36" cy="27" r="1.1" fill="#fbbf24"/>
-      <path d="M40 56 H60 L57 64 H43 Z" fill="#c9a227"/>
-      <path d="M44 64 H56 L53 90 H47 Z" fill="#8a5a3c"/>
-      <rect x="44.5" y="70" width="11" height="3" fill="#6b4329"/>
-      <rect x="45.5" y="78" width="9" height="3" fill="#6b4329"/>
-    </svg><h2>Torchlight</h2></div>
+  <div class="product"><img src="icons/torchlight.svg" alt="" width="44" height="44"><h2>Torchlight</h2></div>
   <ul>
     <li>No accounts, no ads, no analytics, and no data collected.</li>
     <!-- CONFIRM: where Torchlight saves characters (e.g. the browser's local storage) -->
@@ -431,14 +56,7 @@ details .answer p:last-child { margin-bottom: 0; }
     <li>Like any website, Torchlight is delivered by a web host, which may keep standard technical logs (see "This website" below).</li>
   </ul>
 
-  <div class="product"><svg aria-hidden="true" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Gathered app icon">
-      <rect width="1024" height="1024" fill="#3A2819"/>
-      <circle cx="512" cy="512" r="356" fill="#443221"/>
-      <g stroke="#D8A748" stroke-width="62" stroke-linecap="round">
-        <line x1="512" y1="256" x2="512" y2="768"/>
-        <line x1="365" y1="397" x2="659" y2="397"/>
-      </g>
-    </svg><h2>Gathered</h2></div>
+  <div class="product"><img src="icons/gathered.svg" alt="" width="44" height="44"><h2>Gathered</h2></div>
   <ul>
     <li>Gathered does not collect any data, now or ever.</li>
     <li>Everything a leader enters (groups, study notes, and prayer requests) stays on their phone.</li>
@@ -446,7 +64,7 @@ details .answer p:last-child { margin-bottom: 0; }
     <li>Prayer lists leave the phone only when the leader copies one and chooses to send it. Private requests stay private.</li>
   </ul>
 
-  <div class="product"><svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="120" height="120" rx="0" fill="#C8102E"></rect><circle cx="52" cy="64" r="40" fill="#A50D26" opacity=".7"></circle><g transform="translate(4 0) rotate(9 46 78)"><g fill="#FFF6D6" stroke="#E2B86A" stroke-width="1"><circle cx="25" cy="46" r="4"></circle><circle cx="32" cy="43" r="4.5"></circle><circle cx="40" cy="42" r="4.5"></circle><circle cx="48" cy="41" r="5"></circle><circle cx="56" cy="42" r="4.5"></circle><circle cx="64" cy="43" r="4.5"></circle><circle cx="70" cy="47" r="4"></circle><circle cx="29" cy="38" r="4"></circle><circle cx="37" cy="35" r="4.5"></circle><circle cx="45" cy="33" r="4.5"></circle><circle cx="53" cy="34" r="4.5"></circle><circle cx="61" cy="35" r="4.5"></circle><circle cx="67" cy="40" r="4"></circle><circle cx="41" cy="27" r="4"></circle><circle cx="50" cy="26" r="4"></circle><circle cx="58" cy="28" r="4"></circle><circle cx="33" cy="30" r="3.5"></circle><circle cx="64" cy="31" r="3.5"></circle></g><g fill="#FFC24A"><circle cx="36" cy="40" r="1.3"></circle><circle cx="52" cy="30" r="1.3"></circle><circle cx="60" cy="40" r="1.3"></circle><circle cx="44" cy="36" r="1.3"></circle><circle cx="66" cy="45" r="1.3"></circle></g><polygon points="22,50 31.6,50 34.6,102 27,102" fill="#C8102E"></polygon><polygon points="31.6,50 41.2,50 42.2,102 34.6,102" fill="#F3EBDD"></polygon><polygon points="41.2,50 50.8,50 49.8,102 42.2,102" fill="#C8102E"></polygon><polygon points="50.8,50 60.4,50 57.4,102 49.8,102" fill="#F3EBDD"></polygon><polygon points="60.4,50 70,50 65,102 57.4,102" fill="#C8102E"></polygon><polygon points="22,50 70,50 65,102 27,102" fill="none" stroke="#0E0E10" stroke-width="2" stroke-linejoin="round"></polygon><rect x="20" y="46" width="52" height="7" rx="3" fill="#FFC24A" stroke="#0E0E10" stroke-width="1.6"></rect></g><g transform="translate(70 84) rotate(-14) scale(1)"> <rect x="-30" y="-11" width="60" height="22" rx="7" fill="#F3EBDD" stroke="#0E0E10" stroke-width="2"></rect> <rect x="-25" y="-7" width="21" height="14" rx="4" fill="#C8102E"></rect> <rect x="4" y="-7" width="21" height="14" rx="4" fill="#FFC24A"></rect> <path d="M-4.5 11 Q0 1 4.5 11 Z" fill="#0E0E10"></path> <path d="M-21 -3.5 L-15 -3.5" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" opacity=".6"></path> <path d="M8 -3.5 L14 -3.5" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" opacity=".6"></path></g></svg><h2>Be the Critic</h2></div>
+  <div class="product"><img src="icons/be-the-critic.svg" alt="" width="44" height="44"><h2>Be the Critic</h2></div>
   <p>If you use Be the Critic on your own (Solo mode) or with pass-the-phone groups, nothing you do in it reaches us. Your Ticket Stubs and groups stay on your phone, and in your own iCloud if you use it.</p>
   <p>Online clubs let everyone rate on their own phone, so for clubs only, the app's server stores:</p>
   <ul>
@@ -479,47 +97,17 @@ details .answer p:last-child { margin-bottom: 0; }
 
   <h2>Questions</h2>
   <p>Email us with any questions about this policy:</p>
-  <div><div class="copy-email"><span class="copy-email__addr">developer@<wbr>americanmadegames.com</span><button type="button" class="copy-btn" data-copy="developer@americanmadegames.com">Copy</button></div></div>
+  <div class="copy-email"><span class="copy-email__addr">developer@<wbr>americanmadegames.com</span><button type="button" class="copy-btn" data-copy="developer@americanmadegames.com">Copy</button></div>
 
-  <a class="back-btn" href="index.html">&larr; Back to the homepage</a>
+  <a class="outline-btn" href="index.html">&larr; Back to the homepage</a>
 </section>
-
+</main>
 
 <footer>
   <nav class="footer-nav"><a href="news.html">News</a><a href="support.html">Support</a><a href="privacy.html">Privacy</a></nav>
   American Made Games — built independently, without a company or team behind it.
 </footer>
 
-
-<script>
-  // Copy-to-clipboard for email addresses
-  document.querySelectorAll('.copy-btn').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      var text = btn.getAttribute('data-copy');
-      function done(ok) {
-        btn.textContent = ok ? 'Copied!' : 'Select & copy';
-        if (!ok) {
-          var addr = btn.parentNode.querySelector('.copy-email__addr');
-          var r = document.createRange(); r.selectNodeContents(addr);
-          var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
-        }
-        setTimeout(function () { btn.textContent = 'Copy'; }, 2000);
-      }
-      function fallback() {
-        try {
-          var t = document.createElement('textarea');
-          t.value = text; t.setAttribute('readonly', ''); t.style.position = 'fixed'; t.style.opacity = '0';
-          document.body.appendChild(t); t.select();
-          var ok = document.execCommand('copy');
-          document.body.removeChild(t); done(ok);
-        } catch (e) { done(false); }
-      }
-      if (navigator.clipboard && window.isSecureContext) {
-        navigator.clipboard.writeText(text).then(function () { done(true); }, fallback);
-      } else { fallback(); }
-    });
-  });
-</script>
-
+<script src="site.js"></script>
 </body>
 </html>

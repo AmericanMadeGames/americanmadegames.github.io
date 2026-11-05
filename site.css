@@ -1,0 +1,565 @@
+/* ============================================================
+   AMERICAN MADE GAMES — SHARED STYLES
+   Used by every page. Sections are labelled by where they're used.
+   ============================================================ */
+
+:root {
+  --navy: #16233F;
+  --navy-deep: #0E1729;
+  --crimson: #B4342E;
+  --gold: #C9A227;
+  --gold-hover: #D9B23A;
+  --parchment: #F2E9D8;
+  --grey: #8A93A6;
+  --text: #C3C8D6;
+  --text-bright: #D8DCE6;
+  --rule: rgba(201,162,39,0.2);
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: 'Lora', serif;
+  background: var(--navy-deep);
+  color: var(--parchment);
+}
+
+/* ---------- SECTIONS ---------- */
+section {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 90px 24px;
+}
+
+/* Inner pages sit under the top bar, so they need less space above */
+section.page { padding-top: 70px; }
+
+.section-label {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 0.78rem;
+  line-height: normal;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: 0 0 10px;
+}
+
+h1,
+h2 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  color: var(--parchment);
+}
+h1 { margin: 0 0 12px; }
+h2 { margin: 0 0 28px; }
+
+.lede {
+  font-size: 1.08rem;
+  line-height: 1.75;
+  color: var(--text-bright);
+  max-width: 620px;
+  margin: 0 0 32px;
+}
+
+/* ---------- BUTTONS ---------- */
+.store-btn {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--navy-deep);
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-decoration: none;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.store-btn--muted {
+  background: transparent;
+  color: var(--grey);
+  border: 1px solid var(--grey);
+}
+.store-btn--muted:hover { color: var(--parchment); border-color: var(--parchment); }
+
+/* Outlined secondary link: "See all news", "Back to the homepage" */
+.outline-btn {
+  display: inline-block;
+  margin-top: 28px;
+  background: transparent;
+  color: var(--grey);
+  border: 1px solid var(--grey);
+  border-radius: 8px;
+  padding: 10px 18px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-decoration: none;
+}
+.outline-btn:hover { color: var(--parchment); border-color: var(--parchment); }
+
+/* ---------- COPYABLE EMAIL ---------- */
+.copy-email {
+  display: flex;
+  width: fit-content;
+  max-width: 100%;
+  margin: 24px 0 8px;
+  background: var(--navy);
+  border: 1px solid rgba(201,162,39,0.45);
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: left;
+}
+.copy-email__addr {
+  padding: 12px 16px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 0.92rem;
+  color: var(--parchment);
+  user-select: all;
+  -webkit-user-select: all;
+  min-width: 0;
+  align-self: center;
+}
+.copy-btn {
+  flex-shrink: 0;
+  background: var(--gold);
+  color: var(--navy-deep);
+  border: none;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 0 18px;
+  min-height: 44px;
+  cursor: pointer;
+}
+.copy-btn:hover { background: var(--gold-hover); }
+
+/* ---------- NEWS (homepage + news page) ---------- */
+.news-feed {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.news-item {
+  background: var(--navy);
+  border: 1px solid rgba(201,162,39,0.18);
+  border-left: 3px solid var(--crimson);
+  border-radius: 10px;
+  padding: 22px 26px;
+}
+
+.news-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.75rem;
+  color: var(--grey);
+  letter-spacing: 0.04em;
+}
+
+.news-tag {
+  color: var(--gold);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.news-item h3 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 1.08rem;
+  margin: 0 0 8px;
+  color: var(--parchment);
+}
+
+.news-item p {
+  margin: 0;
+  color: var(--text);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.news-item a { color: var(--gold); }
+
+/* ---------- FOOTER ---------- */
+footer {
+  text-align: center;
+  padding: 40px 24px 50px;
+  color: var(--grey);
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+.footer-nav { display: flex; justify-content: center; gap: 22px; margin-bottom: 14px; }
+.footer-nav a { color: var(--parchment); text-decoration: none; font-weight: 700; }
+.footer-nav a:hover { color: var(--gold); }
+
+/* ============================================================
+   HOMEPAGE
+   ============================================================ */
+
+/* ---------- HERO ---------- */
+.hero {
+  min-height: 100svh;
+  max-width: 780px; /* matches the content column; remove to run the hero full width */
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  padding: 40px 24px;
+  background: radial-gradient(ellipse at 50% 30%, var(--navy) 0%, var(--navy-deep) 72%);
+  overflow: hidden;
+}
+
+.star-field {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.shield {
+  width: min(46vw, 210px);
+  height: auto;
+  margin-bottom: 22px;
+  filter: drop-shadow(0 18px 40px rgba(0,0,0,0.45));
+}
+
+.wordmark {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: clamp(1.8rem, 6vw, 3.1rem);
+  letter-spacing: 0.04em;
+  color: var(--parchment);
+  margin: 0;
+  text-transform: uppercase;
+  line-height: 1.05;
+}
+
+/* The gold "Made" in every American Made wordmark */
+.wordmark span,
+.mini-wordmark span,
+.brand-name span { color: var(--gold); }
+
+.mini-wordmark {
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.tagline {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: clamp(1rem, 2.4vw, 1.25rem);
+  color: var(--grey);
+  margin: 18px 0 0;
+  max-width: 480px;
+}
+
+.scroll-cue {
+  margin-top: 46px;
+  color: var(--grey);
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  animation: bob 2.2s ease-in-out infinite;
+}
+.scroll-cue svg { width: 16px; height: 16px; }
+@keyframes bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
+}
+
+/* ---------- SECTION DIVIDERS ---------- */
+.apps-section,
+.news-section,
+.contact-section { border-top: 1px solid var(--rule); }
+
+.news-section .outline-btn { margin-top: 20px; }
+
+.contact-section { text-align: center; }
+.contact-section .lede,
+.contact-section .copy-email { margin-left: auto; margin-right: auto; }
+.contact-section .lede { margin-bottom: 0; }
+
+/* ---------- GAME / APP CARDS ---------- */
+.game-card {
+  margin-top: 40px;
+  background: var(--navy);
+  border: 1px solid rgba(201,162,39,0.25);
+  border-radius: 14px;
+  padding: 32px;
+  display: flex;
+  gap: 26px;
+  align-items: center;
+}
+.game-card + .game-card { margin-top: 20px; }
+
+.game-icon {
+  width: 92px;
+  height: 92px;
+  border-radius: 20px;
+  flex-shrink: 0;
+  box-shadow: 0 10px 26px rgba(0,0,0,0.35);
+}
+
+.game-info h3 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 1.3rem;
+  margin: 0 0 8px;
+  color: var(--parchment);
+}
+
+.game-info p {
+  margin: 0 0 12px;
+  color: var(--text);
+  font-size: 0.96rem;
+  line-height: 1.6;
+}
+
+.learn-more {
+  display: inline-block;
+  margin: 0 0 14px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 0.88rem;
+  color: var(--gold);
+  text-decoration: none;
+}
+.learn-more:hover { color: var(--parchment); text-decoration: underline; }
+
+.store-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.badge {
+  display: inline-block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--gold);
+  border: 1px solid var(--gold);
+  border-radius: 20px;
+  padding: 9px 18px; /* + 1px border = same height as .store-btn */
+}
+
+/* ---------- ANDROID NOTE POPUP ---------- */
+.note-dialog {
+  max-width: 460px;
+  width: calc(100% - 32px);
+  background: var(--navy);
+  color: var(--parchment);
+  border: 1px solid rgba(201,162,39,0.4);
+  border-radius: 14px;
+  padding: 30px 28px 26px;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.55);
+}
+.note-dialog::backdrop { background: rgba(14,23,41,0.75); }
+.note-dialog h3 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 1.25rem;
+  margin: 0 0 14px;
+}
+.note-dialog p:not(.section-label) {
+  color: var(--text);
+  font-size: 0.96rem;
+  line-height: 1.65;
+  margin: 0 0 14px;
+}
+.note-actions { margin: 8px 0 0; display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 10px; }
+
+/* ============================================================
+   INNER PAGES (news, privacy, support)
+   ============================================================ */
+
+/* ---------- TOP BAR ---------- */
+.topbar {
+  background: radial-gradient(ellipse at 50% 0%, var(--navy) 0%, var(--navy-deep) 80%);
+  border-bottom: 1px solid var(--rule);
+}
+.topbar-inner {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 22px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+.brand img { width: 40px; height: 42px; flex-shrink: 0; }
+.brand-name {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: 1.05rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--parchment);
+  line-height: 1.1;
+}
+.home-link {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: var(--grey);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.home-link:hover { color: var(--parchment); }
+
+/* ---------- DOCUMENT PAGES (privacy, support) ----------
+   :where() keeps these plain-element rules low-priority, so any
+   class (.section-label, .lede, .outline-btn...) overrides them
+   without needing extra ".doc .x" rules. */
+:where(.doc) h2 {
+  font-size: 1.25rem;
+  margin: 44px 0 12px;
+}
+:where(.doc) h3 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--gold);
+  margin: 26px 0 8px;
+}
+:where(.doc) p,
+:where(.doc) li {
+  color: var(--text);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+:where(.doc) p { margin: 0 0 14px; }
+:where(.doc) ul { margin: 0 0 14px; padding-left: 22px; }
+:where(.doc) li { margin-bottom: 6px; }
+:where(.doc) a { color: var(--gold); }
+:where(.doc) strong { color: var(--parchment); }
+
+.updated {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.78rem;
+  color: var(--grey);
+  letter-spacing: 0.04em;
+  margin: -18px 0 30px;
+}
+
+.promise {
+  background: var(--navy);
+  border: 1px solid rgba(201,162,39,0.25);
+  border-left: 3px solid var(--gold);
+  border-radius: 10px;
+  padding: 20px 24px;
+  margin: 0 0 10px;
+}
+.promise p { margin: 0; color: var(--parchment); font-size: 1.05rem; }
+
+.product {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 46px 0 6px;
+}
+.product img { width: 44px; height: 44px; border-radius: 10px; flex-shrink: 0; }
+.product h2 { margin: 0; }
+
+.status {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--gold);
+  border: 1px solid var(--gold);
+  border-radius: 20px;
+  padding: 3px 10px;
+  white-space: nowrap;
+}
+
+/* ---------- FAQ (support) ---------- */
+details {
+  background: var(--navy);
+  border: 1px solid rgba(201,162,39,0.18);
+  border-radius: 10px;
+  margin: 10px 0;
+}
+summary {
+  cursor: pointer;
+  padding: 16px 20px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--parchment);
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+summary::-webkit-details-marker { display: none; }
+summary::after { content: '+'; color: var(--gold); font-size: 1.1rem; line-height: 1; }
+details[open] summary::after { content: '\2212'; }
+details .answer { padding: 0 20px 16px; }
+details .answer p:last-child { margin-bottom: 0; }
+
+.verse { font-style: italic; color: var(--grey); }
+
+/* ============================================================
+   PHONES
+   ============================================================ */
+@media (max-width: 560px) {
+  .news-item { padding: 20px; }
+  .brand-name { font-size: 0.9rem; }
+  .copy-email__addr { font-size: 0.8rem; padding: 12px; }
+  .copy-btn { padding: 0 14px; }
+
+  .game-card { flex-direction: column; text-align: center; padding: 26px 18px; }
+  /* buttons stay side by side on phones: two equal columns */
+  .store-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    width: 100%;
+    align-items: stretch;
+  }
+  .store-row > * { margin: 0; align-self: stretch; }
+  .store-row > :only-child { grid-column: 1 / -1; justify-self: center; align-self: center; }
+  .store-row .store-btn,
+  .store-row .badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 44px;
+    padding: 8px 10px;
+    font-size: 0.78rem;
+    line-height: 1.25;
+  }
+}
