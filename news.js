@@ -13,6 +13,12 @@
    ============================================================ */
 const NEWS = [
   {
+    date: "Nov 23, 2026",
+    tag: "Robot Rampage Reloaded",
+    title: "Robot Rampage Reloaded is coming soon",
+    body: "Our next game: you're a giant robot, and the city is in the way. Robot Rampage Reloaded is a side-scrolling destruction game for iPhone and iPad. Level every building to open the gate, take on tanks, helicopters, jets and enemy mechs with your eye laser, jetpack and nuke, and stack upgrades across five worlds. Coming soon to the App Store. <a href=\"https://robotrampagereloaded.americanmadegames.com\" target=\"_blank\" rel=\"noopener\">Take a look</a>."
+  },
+  {
     date: "Nov 11, 2026",
     tag: "Be the Critic",
     title: "Be the Critic is out now",
